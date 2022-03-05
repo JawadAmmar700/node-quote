@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my quotes</title>
+  </head>
+  <body>
+    <div class="w-full h-screen bg-[#111827] flex justify-center">
+      <div class="flex flex-col w-[80%] mt-16">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="inline-block py-2 min-w-full sm:px-6 lg:px-8">
+            <div class="overflow-hidden shadow-md">
+              <table class="min-w-full">
+                <thead class="bg-gray-50 dark:bg-gray-700">
+                  <tr>
+                    <th
+                      scope="col"
+                      class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                    >
+                      quote
+                    </th>
+                    <th
+                      scope="col"
+                      class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                    >
+                      first name
+                    </th>
+                    <th
+                      scope="col"
+                      class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                    >
+                      last name
+                    </th>
+                    <th
+                      scope="col"
+                      class="py-3 px-6 text-xs font-medium tracking-wider text-left text-gray-700 uppercase dark:text-gray-400"
+                    >
+                      isPublic
+                    </th>
+                    <th scope="col" class="relative py-3 px-6">
+                      <span class="sr-only">Edit</span>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% myQuotes.forEach(quote=>{ %>
+                  <tr
+                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                  >
+                    <td
+                      class="py-4 px-6 text-sm font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      <%-quote.quote%>
+                    </td>
+                    <td
+                      class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                    >
+                      <%-quote.firstName%>
+                    </td>
+                    <td
+                      class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                    >
+                      <%-quote.lastName%>
+                    </td>
+                    <td
+                      class="py-4 px-6 text-sm text-gray-500 whitespace-nowrap dark:text-gray-400"
+                    >
+                      <%-quote.isPublic%>
+                    </td>
+                    <td
+                      class="py-4 px-6 text-sm font-medium text-right whitespace-nowrap"
+                    >
+                      <a
+                        href="/edit-quote?id=<%- quote._id%>"
+                        class="text-blue-600 dark:text-blue-500 hover:underline"
+                        >Edit</a
+                      >
+                      <a href="/quote/delete/<%- quote._id%>">
+                        <i
+                          class="fa fa-trash ml-2 text-red-600 scale-100 hover:scale-105 cursor-pointer"
+                          aria-hidden="true"
+                        ></i>
+                      </a>
+                    </td>
+                  </tr>
+                  <% }) %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./styles/header.css" />
+  </head>
+  <body>
+    <header class="relative z-20">
+      <div
+        class="w-full h-[50px] bg-[#0F172A] flex items-center justify-evenly shadow-lg shadow-cyan-500/50 text-white"
+      >
+        <i
+          id="menu"
+          class="fas fa-bars cursor-pointer scale-100 hover:scale-105"
+        ></i>
+        <img
+          src="<%-userImage%>"
+          alt=""
+          class="w-[30px] h-[30px] rounded-full"
+        />
+      </div>
+      <div
+        id="side-menu"
+        class="w-[200px] -left-[200px] text-slate-100 h-screen bg-[#091636] absolute top-0 flex flex-col space-y-3"
+      >
+        <a
+          class="w-full cursor-pointer hover:bg-[#0e1f49] p-3 text-md font-semibold"
+          href="/dashboard"
+          >dashboard
+        </a>
+        <a
+          href="/my-quotes"
+          class="w-full cursor-pointer hover:bg-[#0e1f49] p-3 text-md font-semibold"
+          >quotes
+        </a>
+        <a
+          href="/auth/logout"
+          class="w-full cursor-pointer hover:bg-[#0e1f49] p-3 text-md font-semibold"
+          >logout</a
+        >
+      </div>
+      <div
+        id="hidden-div"
+        class="w-full h-screen hidden -z-10 absolute top-0"
+      ></div>
+    </header>
+
+    <script src="./js/header.js"></script>
+  </body>
+</html>
