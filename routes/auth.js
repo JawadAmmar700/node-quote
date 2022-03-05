@@ -10,18 +10,18 @@ route.get(
 route.get(
   "/google/callback",
   passport.authenticate("google", {
-    successRedirect: "/auth/google/success",
-    failureRedirect: "/auth/google/failure",
+    successRedirect: "api/auth/google/success",
+    failureRedirect: "api/auth/google/failure",
   })
 )
 
 route.get("/logout", (req, res) => {
   req.logout()
-  res.redirect("/")
+  res.redirect("/api")
 })
 
 route.get("/google/success", (req, res) => {
-  res.redirect("/dashboard")
+  res.redirect("api/dashboard")
 })
 route.get("/google/failure", (req, res) => {
   res.send("failure")

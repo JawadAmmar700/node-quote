@@ -17,7 +17,7 @@ route.post("/add-quote", (req, res) => {
   try {
     if (!quote) res.status(400).send("Quote is required")
     newQuote.save()
-    res.redirect("/dashboard")
+    res.redirect("api/dashboard")
   } catch (err) {
     throw err
   }
@@ -26,7 +26,7 @@ route.post("/add-quote", (req, res) => {
 route.get("/delete/:id", async (req, res) => {
   const { id } = req.params
   await Quote.deleteOne({ _id: id })
-  res.redirect("/my-quotes")
+  res.redirect("api/my-quotes")
 })
 
 route.post("/edit", async (req, res) => {
@@ -36,7 +36,7 @@ route.post("/edit", async (req, res) => {
     { _id: id },
     { quote, firstName, lastName, isPublic: appearance }
   )
-  res.redirect("/my-quotes")
+  res.redirect("api/my-quotes")
 })
 
 module.exports = route
