@@ -48,9 +48,9 @@ app.set("view engine", "ejs")
 app.use(express.static(path.join(__dirname, "public")))
 
 //routes
-app.use("/api", require("./routes"))
-app.use("/api/auth", require("./routes/auth"))
-app.use("/api/quote", require("./routes/quote"))
+app.use("/", require("./routes"))
+app.use("/auth", require("./routes/auth"))
+app.use("/quote", require("./routes/quote"))
 
 const PORT = process.env.PORT || 3000
 
