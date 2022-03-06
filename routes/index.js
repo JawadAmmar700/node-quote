@@ -22,6 +22,7 @@ route.get("/dashboard", checkIfUserIsLoggedIn, async (req, res) => {
     userImage: req.user.photos[0].value,
     quotes: publicQuotes,
     _id: req.user._id,
+    title: "Dashboard",
   })
 })
 
@@ -30,6 +31,7 @@ route.get("/my-quotes", async (req, res) => {
   res.render("pages/my-quotes", {
     userImage: req.user.photos[0].value,
     myQuotes,
+    title: "My Quotes",
   })
 })
 
@@ -38,6 +40,7 @@ route.get("/new-quote", (req, res) => {
     userImage: req.user.photos[0].value,
     firstName: req.user.name.givenName,
     lastName: req.user.name.familyName,
+    title: "New Quote",
   })
 })
 
@@ -50,6 +53,7 @@ route.get("/edit-quote", async (req, res) => {
     lastName: quote.lastName,
     quote: quote.quote,
     isPublic: quote.isPublic,
+    title: "Edit Quote",
   })
 })
 

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/quote.png" />
     <title>Login</title>
     <link rel="stylesheet" href="./styles/style.css" />
     <link
@@ -17,9 +18,14 @@
   <body>
     <main class="w-full h-screen bg-[#111827] flex justify-center">
       <div
-        class="mt-5 p-4 shadow-2xl w-[400px] h-[200px] rounded bg-slate-50 flex flex-col space-y-7 items-center justify-center"
+        class="mt-5 p-4 w-[400px] h-[300px] rounded flex flex-col space-y-7 items-center shadow-lg shadow-cyan-500/50"
       >
-        <p class="text-sm text-slate-800 font-medium">
+        <img
+          src="/images/quote.png"
+          class="w-[100px] h-[100px] rounded"
+          alt=""
+        />
+        <p class="text-sm text-slate-100 font-bold">
           Quotes are sometimes used to describe things that is real, so be
           honest
         </p>
@@ -27,7 +33,9 @@
           href="/auth/google"
           class="flex justify-center items-center space-x-3 bg-black text-white w-[200px] p-2 rounded scale-95 hover:scale-100 cursor-pointer"
         >
-          <h1 class="text-md text-center">Login with google</h1>
+          <h1 class="text-sm font-bold text-center text-slate-100">
+            Login with google
+          </h1>
           <i class="fa-brands fa-google text-blue-800"></i>
         </a>
       </div>
