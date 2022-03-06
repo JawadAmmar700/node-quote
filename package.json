@@ -2,7 +2,7 @@
   "name": "notynode",
   "version": "1.0.0",
   "description": "quotes is something life stands on",
-  "main": "main.js",
+  "main": "index.js",
   "author": "jawad ammar",
   "license": "MIT",
   "engines": {
